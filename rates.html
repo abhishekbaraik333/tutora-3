@@ -33,100 +33,6 @@
 
 
     <style>
-        .hidden {
-            display: none;
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 55px;
-            height: 22px;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #2196F3;
-            transition: .4s;
-            border-radius: 34px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 15px;
-            width: 20px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        input:checked+.slider {
-            background-color: #2196F3;
-        }
-
-        input:checked+.slider:before {
-            transform: translateX(26px);
-        }
-
-        .slider.round {
-            border-radius: 34px;
-        }
-
-        .slider.round:before {
-            border-radius: 50%;
-        }
-
-        .li_one {
-            display: none;
-        }
-
-        .li_two {
-            display: none;
-        }
-
-        .li_three {
-            display: none;
-        }
-
-        .open_one {
-            display: block !important;
-        }
-
-        .open_two {
-            display: block !important;
-        }
-
-        .open_three {
-            display: block !important;
-        }
-
-        .btn-design {
-            color: #f91974;
-        }
-
-        .rate-top-btn button {
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-
-        .rate-top-btn button.clicked {
-            color: #f91974;
-            border-bottom: 3px solid #f91974;
-        }
 
         .pricing-container {
             width: 50%;
@@ -136,10 +42,8 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             text-align: center;
-        }
-
-        h1 {
-            color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
         }
 
         .form-group {
@@ -147,7 +51,7 @@
         }
 
         label {
-            font-size: 18px;
+            font-size: 16px;
             color: #555;
             display: block;
             margin-bottom: 8px;
@@ -169,20 +73,28 @@
         }
 
         .pricing-result h2 {
-            color: #444;
+            color: #333;
             margin-bottom: 15px;
         }
 
         .pricing-result p {
             font-size: 22px;
-            color: #444;
             margin: 10px 0;
         }
 
         #per-session-price,
         #per-month-price {
             font-weight: bold;
-            color: #0073e6;
+        }
+
+        #total-price{
+            font-weight: 900 !important;
+        }
+
+        @media (max-width:640px) {
+            .pricing-container{
+                width: 100%;
+            }
         }
     </style>
 
@@ -231,9 +143,8 @@
 
     <!------------- Rates Section ------------->
     
-
     <div class="pricing-container">
-        <h1>Choose Your Tutoring Plan</h1>
+        <h2>Only 1 minute to get your qoute :</h2>
         <form id="pricing-form">
             <!-- Commitment Duration -->
             <div class="form-group">
@@ -258,9 +169,9 @@
             <div class="form-group">
                 <label for="session-duration">Session Duration:</label>
                 <select id="session-duration">
-                    <option value="30">30 minutes</option>
-                    <option value="60">60 minutes</option>
-                    <option value="90">90 minutes</option>
+                    <option value="60">1 hour</option>
+                    <option value="90">1.5 hours</option>
+                    <option value="120">2 hours</option>
                 </select>
             </div>
 
@@ -275,11 +186,12 @@
 
             <!-- Pricing Section -->
             <div class="pricing-result">
-                <h2>Pricing</h2>
-                <p>Per Session: $<span id="per-session-price">0</span></p>
-                <p>Per Month: $<span id="per-month-price">0</span></p>
-                <p>Total Price: $<span id="total-price">0</span></p>
-                <p id="discount-display" style="color: green;"></p>
+                <h2>Pricing :</h2>
+                <p>Per Session: $ <span id="per-session-price">0</span></p>
+                <p>Per Month: $ <span id="per-month-price">0</span></p>
+                <p>Total Price: $ <span id="total-price">0</span></p>
+                <p id="discount-display" style="color: #F91974;"></p>
+                <button type="submit">Submit</button>
             </div>
         </form>
     </div>
@@ -328,136 +240,12 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var switchToggles = document.querySelectorAll('.switch-toggle');
-            var durationButtons = document.querySelectorAll('[data-duration]');
-
-            switchToggles.forEach(function (toggle) {
-                toggle.addEventListener('change', function () {
-                    var isMonthly = toggle.checked;
-                    var rateTable = toggle.closest('.rate-table');
-                    toggleVisibility(isMonthly, rateTable);
-                });
-            });
-
-            durationButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    var duration = button.getAttribute('data-duration');
-                    toggleDurationVisibility(duration);
-                });
-            });
-
-            function toggleVisibility(isMonthly, rateTable) {
-                var domicileElements = rateTable.querySelectorAll('.domicile');
-                var distanceElements = rateTable.querySelectorAll('.distance');
-
-                if (isMonthly) {
-                    domicileElements.forEach(function (elem) {
-                        elem.classList.remove('hidden');
-                    });
-                    distanceElements.forEach(function (elem) {
-                        elem.classList.add('hidden');
-                    });
-                } else {
-                    domicileElements.forEach(function (elem) {
-                        elem.classList.add('hidden');
-                    });
-                    distanceElements.forEach(function (elem) {
-                        elem.classList.remove('hidden');
-                    });
-                }
-            }
-
-            function toggleDurationVisibility(duration) {
-                var allDurations = document.querySelectorAll('.duration');
-                allDurations.forEach(function (elem) {
-                    elem.classList.add('hidden');
-                });
-
-                var selectedDurations = document.querySelectorAll('.duration-' + duration);
-                selectedDurations.forEach(function (elem) {
-                    elem.classList.remove('hidden');
-                });
-            }
-
-            // Set default visibility
-            switchToggles.forEach(function (toggle) {
-                var rateTable = toggle.closest('.rate-table');
-                toggleVisibility(toggle.checked, rateTable);
-            });
-
-            // Set default duration visibility to 1 mois
-            toggleDurationVisibility(1);
-        });
-
-        const mois_one = document.getElementById("mois_one");
-        const mois_two = document.getElementById("mois_two");
-        const mois_three = document.getElementById("mois_three");
-        const open_elements = document.querySelectorAll(".li_one");
-        const open_elements2 = document.querySelectorAll(".li_two");
-        const open_elements3 = document.querySelectorAll(".li_three");
-
-
-        mois_one.onclick = function () {
-            open_elements.forEach(function (element) {
-                element.classList.toggle("open_one");
-            });
-            open_elements2.forEach(function (element) {
-                element.classList.remove("open_two");
-                element.classList.remove("open_three");
-            });
-            open_elements3.forEach(function (element) {
-                element.classList.remove("open_two");
-                element.classList.remove("open_three");
-            });
-        };
-
-        mois_two.onclick = function () {
-            open_elements.forEach(function (element) {
-                element.classList.remove("open_one");
-            });
-            open_elements2.forEach(function (element) {
-                element.classList.toggle("open_two");
-            });
-            open_elements3.forEach(function (element) {
-                element.classList.remove("open_one");
-                element.classList.remove("open_three");
-            });
-        };
-
-        mois_three.onclick = function () {
-            open_elements.forEach(function (element) {
-                element.classList.remove("open_one");
-            });
-            open_elements2.forEach(function (element) {
-                element.classList.remove("open_two");
-            });
-            open_elements3.forEach(function (element) {
-                element.classList.toggle("open_three");
-            });
-        };
-
-
-        // Function to handle button click
-        function handleButtonClick(event) {
-            // Remove 'clicked' class from all buttons
-            document.querySelectorAll('.rate-top-btn button').forEach(button => {
-                button.classList.remove('clicked');
-            });
-            // Add 'clicked' class to the clicked button
-            event.target.classList.add('clicked');
-        }
-
-        // Add event listeners to all buttons
-        document.querySelectorAll('.rate-top-btn button').forEach(button => {
-            button.addEventListener('click', handleButtonClick);
-        });
-
+        
         // Dummy prices based on session duration and format
         const pricingData = {
-            "30": { "online": 20, "home": 30 },
-            "60": { "online": 35, "home": 45 },
-            "90": { "online": 50, "home": 60 }
+            "60": { "online": 20, "home": 30 },
+            "90": { "online": 35, "home": 45 },
+            "120": { "online": 50, "home": 60 }
         };
 
         // Update pricing based on user choices
@@ -509,9 +297,6 @@
 
         // Initialize with default values
         updatePricing();
-
-
-
     </script>
 
 
