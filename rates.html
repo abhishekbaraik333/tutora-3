@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="D�couvrez nos tarifs comp�titifs pour les cours particuliers en ligne sur Tutora. Obtenez des informations claires sur les options de tarification adapt�es � vos besoins �ducatifs.">
+    <meta name="keywords" content="tarifs, prix, cours particuliers, en ligne, Tutora">
+    <title>Tarifs - Tutora : Cours particuliers en ligne � des prix comp�titifs</title>
+
+    <!-------Font Awesome------->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-------Bootstrap CSS CDN------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <!-------Bootstrap Script CDN------->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="icon" href="Tutora/favicons/favicon-16x16.png" type="image" sizes="16x16">
+
+
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 55px;
+            height: 22px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #2196F3;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 15px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .li_one {
+            display: none;
+        }
+
+        .li_two {
+            display: none;
+        }
+
+        .li_three {
+            display: none;
+        }
+
+        .open_one {
+            display: block !important;
+        }
+
+        .open_two {
+            display: block !important;
+        }
+
+        .open_three {
+            display: block !important;
+        }
+
+        .btn-design {
+            color: #f91974;
+        }
+
+        .rate-top-btn button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .rate-top-btn button.clicked {
+            color: #f91974;
+            border-bottom: 3px solid #f91974;
+        }
+
+        .pricing-container {
+            width: 50%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        label {
+            font-size: 18px;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .pricing-result {
+            margin-top: 30px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .pricing-result h2 {
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .pricing-result p {
+            font-size: 22px;
+            color: #444;
+            margin: 10px 0;
+        }
+
+        #per-session-price,
+        #per-month-price {
+            font-weight: bold;
+            color: #0073e6;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!------------- Navbar Section ------------->
+    <section class="nav-sec text-center">
+
+        <nav class="navbar text-center">
+
+            <div class="navbar-logo">
+                <a href="/"><img src="./Tutora/logo/logo bleu fond transparent.png" alt="Utora Logo" /></a>
+            </div>
+            <ul class="navbar-links">
+
+                <li><a href="./services">Nos Services</a></li>
+                <li><a href="./tutors">Nos Tuteurs</a></li>
+                <li><a href="./whoare">Qui sommes-nous</a></li>
+                <li><a href="./rates">Nos tarifs</a></li>
+                <li><a href="./blog">Blog</a></li>
+                <li><a href="./contact" class="connexion-btn">Contact</a></li>
+            </ul>
+
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </section>
+
+    <!------------- Hero Section ------------->
+    <header class="hero">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="display-4">Le tuteur privé de votre enfant à partir de/session </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!------------- Rates Section ------------->
+    
+
+    <div class="pricing-container">
+        <h1>Choose Your Tutoring Plan</h1>
+        <form id="pricing-form">
+            <!-- Commitment Duration -->
+            <div class="form-group">
+                <label for="commitment-duration">Commitment Duration:</label>
+                <select id="commitment-duration">
+                    <option value="1">1 Month</option>
+                    <option value="3">3 Months</option>
+                    <option value="6">6 Months</option>
+                </select>
+            </div>
+
+            <!-- Tutoring Format -->
+            <div class="form-group">
+                <label for="format">Tutoring Format:</label>
+                <select id="format">
+                    <option value="online">Online</option>
+                    <option value="home">At Home</option>
+                </select>
+            </div>
+
+            <!-- Session Duration -->
+            <div class="form-group">
+                <label for="session-duration">Session Duration:</label>
+                <select id="session-duration">
+                    <option value="30">30 minutes</option>
+                    <option value="60">60 minutes</option>
+                    <option value="90">90 minutes</option>
+                </select>
+            </div>
+
+            <!-- Number of Sessions Per Month -->
+            <div class="form-group">
+                <label for="sessions-per-month">Sessions Per Month:</label>
+                <select id="sessions-per-month">
+                    <option value="4">4 sessions</option>
+                    <option value="8">8 sessions</option>
+                </select>
+            </div>
+
+            <!-- Pricing Section -->
+            <div class="pricing-result">
+                <h2>Pricing</h2>
+                <p>Per Session: $<span id="per-session-price">0</span></p>
+                <p>Per Month: $<span id="per-month-price">0</span></p>
+                <p>Total Price: $<span id="total-price">0</span></p>
+                <p id="discount-display" style="color: green;"></p>
+            </div>
+        </form>
+    </div>
+
+
+    <!------------- Footer Section ------------->
+    <footer>
+        <div class="footer">
+            <div class="logo">
+                <img src="./logo fond bleu.png" width="120px" alt="Logo">
+            </div>
+            <div class="menu">
+                <h3>Menu</h3>
+                <a href="whoare">Qui sommes nous</a>
+                <a href="blog">Blog</a>
+
+                <a href="contact">Contact</a>
+            </div>
+            <div class="contact">
+                <h3>Contact</h3>
+                <a href="tel:+212705989418">+212 7 05 98 94 18</a>
+                <a href="mailto:contact@tutora.ma">contact@tutora.ma</a>
+            </div>
+            <div class="plus">
+                <h3>Plus</h3>
+                <a href="cgv">CGV</a>
+                <a href="policy">Politique de confidentialité</a>
+                <a href="legal">Mentions légales</a>
+                <a href="faq">FAQ</a>
+            </div>
+            <div class="social">
+                <h3>Social</h3>
+                <a href="#">Facebook</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var switchToggles = document.querySelectorAll('.switch-toggle');
+            var durationButtons = document.querySelectorAll('[data-duration]');
+
+            switchToggles.forEach(function (toggle) {
+                toggle.addEventListener('change', function () {
+                    var isMonthly = toggle.checked;
+                    var rateTable = toggle.closest('.rate-table');
+                    toggleVisibility(isMonthly, rateTable);
+                });
+            });
+
+            durationButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var duration = button.getAttribute('data-duration');
+                    toggleDurationVisibility(duration);
+                });
+            });
+
+            function toggleVisibility(isMonthly, rateTable) {
+                var domicileElements = rateTable.querySelectorAll('.domicile');
+                var distanceElements = rateTable.querySelectorAll('.distance');
+
+                if (isMonthly) {
+                    domicileElements.forEach(function (elem) {
+                        elem.classList.remove('hidden');
+                    });
+                    distanceElements.forEach(function (elem) {
+                        elem.classList.add('hidden');
+                    });
+                } else {
+                    domicileElements.forEach(function (elem) {
+                        elem.classList.add('hidden');
+                    });
+                    distanceElements.forEach(function (elem) {
+                        elem.classList.remove('hidden');
+                    });
+                }
+            }
+
+            function toggleDurationVisibility(duration) {
+                var allDurations = document.querySelectorAll('.duration');
+                allDurations.forEach(function (elem) {
+                    elem.classList.add('hidden');
+                });
+
+                var selectedDurations = document.querySelectorAll('.duration-' + duration);
+                selectedDurations.forEach(function (elem) {
+                    elem.classList.remove('hidden');
+                });
+            }
+
+            // Set default visibility
+            switchToggles.forEach(function (toggle) {
+                var rateTable = toggle.closest('.rate-table');
+                toggleVisibility(toggle.checked, rateTable);
+            });
+
+            // Set default duration visibility to 1 mois
+            toggleDurationVisibility(1);
+        });
+
+        const mois_one = document.getElementById("mois_one");
+        const mois_two = document.getElementById("mois_two");
+        const mois_three = document.getElementById("mois_three");
+        const open_elements = document.querySelectorAll(".li_one");
+        const open_elements2 = document.querySelectorAll(".li_two");
+        const open_elements3 = document.querySelectorAll(".li_three");
+
+
+        mois_one.onclick = function () {
+            open_elements.forEach(function (element) {
+                element.classList.toggle("open_one");
+            });
+            open_elements2.forEach(function (element) {
+                element.classList.remove("open_two");
+                element.classList.remove("open_three");
+            });
+            open_elements3.forEach(function (element) {
+                element.classList.remove("open_two");
+                element.classList.remove("open_three");
+            });
+        };
+
+        mois_two.onclick = function () {
+            open_elements.forEach(function (element) {
+                element.classList.remove("open_one");
+            });
+            open_elements2.forEach(function (element) {
+                element.classList.toggle("open_two");
+            });
+            open_elements3.forEach(function (element) {
+                element.classList.remove("open_one");
+                element.classList.remove("open_three");
+            });
+        };
+
+        mois_three.onclick = function () {
+            open_elements.forEach(function (element) {
+                element.classList.remove("open_one");
+            });
+            open_elements2.forEach(function (element) {
+                element.classList.remove("open_two");
+            });
+            open_elements3.forEach(function (element) {
+                element.classList.toggle("open_three");
+            });
+        };
+
+
+        // Function to handle button click
+        function handleButtonClick(event) {
+            // Remove 'clicked' class from all buttons
+            document.querySelectorAll('.rate-top-btn button').forEach(button => {
+                button.classList.remove('clicked');
+            });
+            // Add 'clicked' class to the clicked button
+            event.target.classList.add('clicked');
+        }
+
+        // Add event listeners to all buttons
+        document.querySelectorAll('.rate-top-btn button').forEach(button => {
+            button.addEventListener('click', handleButtonClick);
+        });
+
+        // Dummy prices based on session duration and format
+        const pricingData = {
+            "30": { "online": 20, "home": 30 },
+            "60": { "online": 35, "home": 45 },
+            "90": { "online": 50, "home": 60 }
+        };
+
+        // Update pricing based on user choices
+        function updatePricing() {
+            const commitmentDuration = document.getElementById('commitment-duration').value;
+            const format = document.getElementById('format').value;
+            const sessionDuration = document.getElementById('session-duration').value;
+            const sessionsPerMonth = document.getElementById('sessions-per-month').value;
+
+            // Calculate per session price based on session duration and format
+            const perSessionPrice = pricingData[sessionDuration][format];
+
+            // Calculate monthly price
+            let perMonthPrice = perSessionPrice * sessionsPerMonth;
+
+            // Calculate total price based on commitment duration
+            let totalPrice = perMonthPrice * commitmentDuration;
+            let discount = 0;
+            let discountText = '';
+
+            // Apply discount based on commitment duration
+            if (commitmentDuration == "3") {
+                discount = 0.10; // 10% discount for 3 months
+                totalPrice *= (1 - discount);
+                discountText = `You saved 10%!`;
+            } else if (commitmentDuration == "6") {
+                discount = 0.15; // 15% discount for 6 months
+                totalPrice *= (1 - discount);
+                discountText = `You saved 15%!`;
+            }
+
+            // Update the pricing display
+            document.getElementById('per-session-price').innerText = perSessionPrice;
+            document.getElementById('per-month-price').innerText = perMonthPrice.toFixed(2);
+            document.getElementById('total-price').innerText = totalPrice.toFixed(2);
+
+            // Display the discount message
+            if (discount > 0) {
+                document.getElementById('discount-display').innerText = discountText;
+            } else {
+                document.getElementById('discount-display').innerText = ''; // No discount for 1-month commitment
+            }
+        }
+
+        // Add event listeners to update pricing on change
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', updatePricing);
+        });
+
+        // Initialize with default values
+        updatePricing();
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
