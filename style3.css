@@ -447,7 +447,7 @@ h2 {
 .contact-form.show {
   opacity: 1;
   transform: translateY(0);
-  max-height: 1200px; /* large enough to fit the content */
+  max-height: inherit; /* large enough to fit the content */
 }
 
 #form-eleve{
