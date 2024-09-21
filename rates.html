@@ -11,7 +11,9 @@
 
     <!-------Font Awesome------->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
@@ -33,7 +35,6 @@
 
 
     <style>
-
         .pricing-container {
             width: 50%;
             margin: 50px auto;
@@ -48,7 +49,8 @@
         .form-group {
             margin: 20px 0;
         }
-        .form-group i{
+
+        .form-group i {
             top: 42px;
         }
 
@@ -74,12 +76,12 @@
             font-weight: bold;
         }
 
-        #total-price{
+        #total-price {
             font-weight: 900 !important;
         }
 
         @media (max-width:640px) {
-            .pricing-container{
+            .pricing-container {
                 width: 97%;
                 padding: 10px;
             }
@@ -130,19 +132,19 @@
     </header>
 
     <!------------- Rates Section ------------->
-    
+
     <div class="pricing-container">
-        <h2>Only 1 minute to get your qoute :</h2>
+        <h2>Seulement 1 minute pour obtenir votre qoute:</h2>
         <form id="pricing-form">
             <!-- Commitment Duration -->
             <div class="form-group">
                 <label for="commitment-duration">
                     <i class="fa-solid fa-school"></i>
-                    Commitment Duration:</label>
+                    Engagement Durée:</label>
                 <select id="commitment-duration">
-                    <option value="1">1 Month</option>
-                    <option value="3">3 Months</option>
-                    <option value="6">6 Months</option>
+                    <option value="1">1 Mois</option>
+                    <option value="3">3 Mois</option>
+                    <option value="6">6 Mois</option>
                 </select>
             </div>
 
@@ -150,10 +152,10 @@
             <div class="form-group">
                 <label for="format">
                     <i class="fa-solid fa-user-graduate"></i>
-                    Tutoring Format:</label>
+                    Tutorat Format:</label>
                 <select id="format">
-                    <option value="online">Online</option>
-                    <option value="home">At Home</option>
+                    <option value="online">Distance</option>
+                    <option value="home">Domicile</option>
                 </select>
             </div>
 
@@ -161,11 +163,11 @@
             <div class="form-group">
                 <label for="session-duration">
                     <i class="fa-solid fa-book-open-reader"></i>
-                    Session Duration:</label>
+                    Durée de la session:</label>
                 <select id="session-duration">
-                    <option value="60">1 hour</option>
-                    <option value="90">1.5 hours</option>
-                    <option value="120">2 hours</option>
+                    <option value="60">1 Heure</option>
+                    <option value="90">1.5 Heure</option>
+                    <option value="120">2 Heure</option>
                 </select>
             </div>
 
@@ -173,7 +175,7 @@
             <div class="form-group">
                 <label for="sessions-per-month">
                     <i class="fa-solid fa-calendar"></i>
-                    Sessions Per Month:</label>
+                    Nombre de sessions par mois:</label>
                 <select id="sessions-per-month">
                     <option value="4">4 sessions</option>
                     <option value="8">8 sessions</option>
@@ -182,12 +184,12 @@
 
             <!-- Pricing Section -->
             <div class="pricing-result">
-                <h2>Pricing :</h2>
-                <p>Per Session: $ <span id="per-session-price">0</span></p>
-                <p>Per Month: $ <span id="per-month-price">0</span></p>
-                <p>Total Price: $ <span id="total-price">0</span></p>
+                <h2>Prix :</h2>
+                <p>Par Session: DH <span id="per-session-price">0</span></p>
+                <p>Per Mois: DH <span id="per-month-price">0</span></p>
+                <p>Total Prix: DH <span id="total-price">0</span></p>
                 <p id="discount-display" style="color: #F91974;"></p>
-                <button type="submit">Submit</button>
+                <button type="submit">S'inscrire</button>
             </div>
         </form>
     </div>
@@ -236,12 +238,23 @@
     </script>
 
     <script>
-        
-        // Dummy prices based on session duration and format
+        // Dummy prices based on session duration, format, and commitment duration
         const pricingData = {
-            "60": { "online": 20, "home": 30 },
-            "90": { "online": 35, "home": 45 },
-            "120": { "online": 50, "home": 60 }
+            "1": { // 1 month pricing
+                "60": { "online": 79, "home": 99 },
+                "90": { "online": 711, "home": 891 },
+                "120": { "online": 672, "home": 842 }
+            },
+            "3": { // 3 months pricing
+                "60": { "online": 118, "home": 148 },
+                "90": { "online": 1066, "home": 1336 },
+                "120": { "online": 1007, "home": 1262 }
+            },
+            "6": { // 6 months pricing
+                "60": { "online": 158, "home": 198},
+                "90": { "online": 1422, "home": 1782 },
+                "120": { "online": 1343, "home": 1683 }
+            }
         };
 
         // Update pricing based on user choices
@@ -251,8 +264,8 @@
             const sessionDuration = document.getElementById('session-duration').value;
             const sessionsPerMonth = document.getElementById('sessions-per-month').value;
 
-            // Calculate per session price based on session duration and format
-            const perSessionPrice = pricingData[sessionDuration][format];
+            // Get the correct per session price based on session duration, format, and commitment duration
+            const perSessionPrice = pricingData[commitmentDuration][sessionDuration][format];
 
             // Calculate monthly price
             let perMonthPrice = perSessionPrice * sessionsPerMonth;
@@ -294,6 +307,7 @@
         // Initialize with default values
         updatePricing();
     </script>
+
 
 
 
